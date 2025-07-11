@@ -21,6 +21,7 @@ import i18n from '../../i18n'
 export interface PeriodBarProps {
   locale: string
   spread: boolean
+  drawingBarHidden: boolean
   symbol: SymbolInfo
   period: Period
   periods: Period[]
@@ -63,11 +64,13 @@ const PeriodBar: Component<PeriodBarProps> = (props) => {
       }}
       class="klinecharts-pro-period-bar"
     >
-      <div class="menu-container">
-        <svg class={props.spread ? '' : 'rotate'} viewBox="0 0 1024 1024" onClick={props.onMenuClick}>
-          <path d="M192.037 287.953h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32zM832.161 479.169H438.553c-17.673 0-32 14.327-32 32s14.327 32 32 32h393.608c17.673 0 32-14.327 32-32s-14.327-32-32-32zM832.161 735.802H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32zM319.028 351.594l-160 160 160 160z" />
-        </svg>
-      </div>
+      {!props.drawingBarHidden && (
+        <div class="menu-container">
+          <svg class={props.spread ? '' : 'rotate'} viewBox="0 0 1024 1024" onClick={props.onMenuClick}>
+            <path d="M192.037 287.953h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32zM832.161 479.169H438.553c-17.673 0-32 14.327-32 32s14.327 32 32 32h393.608c17.673 0 32-14.327 32-32s-14.327-32-32-32zM832.161 735.802H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32zM319.028 351.594l-160 160 160 160z" />
+          </svg>
+        </div>
+      )}
       <Show when={props.symbol}>
         <div class="symbol" onClick={props.onSymbolClick}>
           <Show when={props.symbol.logo}>

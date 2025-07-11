@@ -56,6 +56,9 @@ export interface ChartProOptions {
   mainIndicators?: string[]
   subIndicators?: string[]
   datafeed: Datafeed
+
+  // custom
+  drawingBarHidden?: boolean
 }
 
 export interface ChartPro {

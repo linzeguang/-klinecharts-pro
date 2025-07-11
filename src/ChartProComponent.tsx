@@ -123,6 +123,7 @@ const ChartProComponent: Component<ChartProComponentProps> = (props) => {
   const [screenshotUrl, setScreenshotUrl] = createSignal('')
 
   const [drawingBarVisible, setDrawingBarVisible] = createSignal(props.drawingBarVisible)
+  const [drawingBarHidden, setDrawingBarHidden] = createSignal(props.drawingBarHidden)
 
   const [symbolSearchModalVisible, setSymbolSearchModalVisible] = createSignal(false)
 
@@ -587,9 +588,11 @@ const ChartProComponent: Component<ChartProComponentProps> = (props) => {
         locale={props.locale}
         symbol={symbol()}
         spread={drawingBarVisible()}
+        drawingBarHidden={drawingBarHidden()}
         period={period()}
         periods={props.periods}
         onMenuClick={async () => {
+          if (drawingBarHidden()) return
           try {
             await startTransition(() => setDrawingBarVisible(!drawingBarVisible()))
             widget?.resize()
