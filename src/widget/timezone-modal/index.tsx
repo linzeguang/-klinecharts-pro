@@ -27,7 +27,7 @@ export interface TimezoneModalProps {
   onConfirm: (timezone: SelectDataSourceItem) => void
 }
 
-const TimezoneModal: Component<TimezoneModalProps> = props => {
+const TimezoneModal: Component<TimezoneModalProps> = (props) => {
   const [innerTimezone, setInnerTimezone] = createSignal(props.timezone)
 
   const timezoneOptions = createMemo(() => createTimezoneSelectOptions(props.locale))
@@ -42,15 +42,19 @@ const TimezoneModal: Component<TimezoneModalProps> = props => {
           onClick: () => {
             props.onConfirm(innerTimezone())
             props.onClose()
-          }
-        }
+          },
+        },
       ]}
-      onClose={props.onClose}>
+      onClose={props.onClose}
+    >
       <Select
         style={{ width: '100%', 'margin-top': '20px' }}
         value={innerTimezone().text}
-        onSelected={(tz) => { setInnerTimezone(tz as SelectDataSourceItem) }}
-        dataSource={timezoneOptions()}/>
+        onSelected={(tz) => {
+          setInnerTimezone(tz as SelectDataSourceItem)
+        }}
+        dataSource={timezoneOptions()}
+      />
     </Modal>
   )
 }

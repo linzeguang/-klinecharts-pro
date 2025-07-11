@@ -25,14 +25,10 @@ import { Datafeed, SymbolInfo, Period, DatafeedSubscribeCallback, ChartProOption
 
 import './index.less'
 
-overlays.forEach(o => { registerOverlay(o) })
+overlays.forEach((o) => {
+  registerOverlay(o)
+})
 
-export {
-  DefaultDatafeed,
-  KLineChartPro,
-  load as loadLocales
-}
+export { DefaultDatafeed, KLineChartPro, load as loadLocales }
 
-export type {
-  Datafeed, SymbolInfo, Period, DatafeedSubscribeCallback, ChartProOptions, ChartPro
-}
+export type { Datafeed, SymbolInfo, Period, DatafeedSubscribeCallback, ChartProOptions, ChartPro }

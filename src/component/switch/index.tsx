@@ -21,16 +21,16 @@ export interface SwitchProps {
   onChange: () => void
 }
 
-const Switch: Component<SwitchProps> = props => {
+const Switch: Component<SwitchProps> = (props) => {
   return (
     <div
       style={props.style}
       class={`klinecharts-pro-switch ${props.open ? 'turn-on' : 'turn-off'} ${props.class ?? ''}`}
-      onClick={_ => {
+      onClick={(_) => {
         props.onChange && props.onChange()
-      }}>
-      <i
-        class="thumb"/>
+      }}
+    >
+      <i class="thumb" />
     </div>
   )
 }

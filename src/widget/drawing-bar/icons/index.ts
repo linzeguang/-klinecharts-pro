@@ -97,11 +97,11 @@ export const mapping = {
   unlock,
   visible,
   invisible,
-  remove
+  remove,
 }
 
-export function createSingleLineOptions (locale: string): SelectDataSourceItem[] {
-  return  [
+export function createSingleLineOptions(locale: string): SelectDataSourceItem[] {
+  return [
     { key: 'horizontalStraightLine', text: i18n('horizontal_straight_line', locale) },
     { key: 'horizontalRayLine', text: i18n('horizontal_ray_line', locale) },
     { key: 'horizontalSegment', text: i18n('horizontal_segment', locale) },
@@ -112,27 +112,27 @@ export function createSingleLineOptions (locale: string): SelectDataSourceItem[]
     { key: 'rayLine', text: i18n('ray_line', locale) },
     { key: 'segment', text: i18n('segment', locale) },
     { key: 'arrow', text: i18n('arrow', locale) },
-    { key: 'priceLine', text: i18n('price_line', locale) }
+    { key: 'priceLine', text: i18n('price_line', locale) },
   ]
 }
 
-export function createMoreLineOptions (locale: string): SelectDataSourceItem[] {
+export function createMoreLineOptions(locale: string): SelectDataSourceItem[] {
   return [
     { key: 'priceChannelLine', text: i18n('price_channel_line', locale) },
-    { key: 'parallelStraightLine', text: i18n('parallel_straight_line', locale) }
+    { key: 'parallelStraightLine', text: i18n('parallel_straight_line', locale) },
   ]
 }
 
-export function createPolygonOptions (locale: string): SelectDataSourceItem[] {
+export function createPolygonOptions(locale: string): SelectDataSourceItem[] {
   return [
     { key: 'circle', text: i18n('circle', locale) },
     { key: 'rect', text: i18n('rect', locale) },
     { key: 'parallelogram', text: i18n('parallelogram', locale) },
-    { key: 'triangle', text: i18n('triangle', locale) }
+    { key: 'triangle', text: i18n('triangle', locale) },
   ]
 }
 
-export function createFibonacciOptions (locale: string): SelectDataSourceItem[] {
+export function createFibonacciOptions(locale: string): SelectDataSourceItem[] {
   return [
     { key: 'fibonacciLine', text: i18n('fibonacci_line', locale) },
     { key: 'fibonacciSegment', text: i18n('fibonacci_segment', locale) },
@@ -140,11 +140,11 @@ export function createFibonacciOptions (locale: string): SelectDataSourceItem[] 
     { key: 'fibonacciSpiral', text: i18n('fibonacci_spiral', locale) },
     { key: 'fibonacciSpeedResistanceFan', text: i18n('fibonacci_speed_resistance_fan', locale) },
     { key: 'fibonacciExtension', text: i18n('fibonacci_extension', locale) },
-    { key: 'gannBox', text: i18n('gann_box', locale) }
+    { key: 'gannBox', text: i18n('gann_box', locale) },
   ]
 }
 
-export function createWaveOptions (locale: string): SelectDataSourceItem[] {
+export function createWaveOptions(locale: string): SelectDataSourceItem[] {
   return [
     { key: 'xabcd', text: i18n('xabcd', locale) },
     { key: 'abcd', text: i18n('abcd', locale) },
@@ -155,10 +155,10 @@ export function createWaveOptions (locale: string): SelectDataSourceItem[] {
   ]
 }
 
-export function createMagnetOptions (locale: string): SelectDataSourceItem[] {
+export function createMagnetOptions(locale: string): SelectDataSourceItem[] {
   return [
     { key: 'weak_magnet', text: i18n('weak_magnet', locale) },
-    { key: 'strong_magnet', text: i18n('strong_magnet', locale) }
+    { key: 'strong_magnet', text: i18n('strong_magnet', locale) },
   ]
 }
 
@@ -168,4 +168,4 @@ interface IconProps {
 }
 
 // @ts-expect-error
-export const Icon: Component<IconProps> = props => mapping[props.name](props.class)
+export const Icon: Component<IconProps> = (props) => mapping[props.name](props.class)

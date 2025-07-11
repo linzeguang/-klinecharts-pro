@@ -22,8 +22,8 @@ const parallelogram: OverlayTemplate = {
   needDefaultYAxisFigure: true,
   styles: {
     polygon: {
-      color: 'rgba(22, 119, 255, 0.15)'
-    }
+      color: 'rgba(22, 119, 255, 0.15)',
+    },
   },
   createPointFigures: ({ coordinates }) => {
     if (coordinates.length === 2) {
@@ -31,8 +31,8 @@ const parallelogram: OverlayTemplate = {
         {
           type: 'line',
           ignoreEvent: true,
-          attrs: { coordinates }
-        }
+          attrs: { coordinates },
+        },
       ]
     }
     if (coordinates.length === 3) {
@@ -41,8 +41,8 @@ const parallelogram: OverlayTemplate = {
         {
           type: 'polygon',
           attrs: { coordinates: [coordinates[0], coordinates[1], coordinates[2], coordinate] },
-          styles: { style: 'stroke_fill' }
-        }
+          styles: { style: 'stroke_fill' },
+        },
       ]
     }
     return []
@@ -60,7 +60,7 @@ const parallelogram: OverlayTemplate = {
       // @ts-expect-error
       points[0].price = performPoint.price
     }
-  }
+  },
 }
 
 export default parallelogram

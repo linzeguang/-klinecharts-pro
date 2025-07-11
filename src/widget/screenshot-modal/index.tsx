@@ -24,7 +24,7 @@ export interface ScreenshotModalProps {
   onClose: () => void
 }
 
-const ScreenshotModal: Component<ScreenshotModalProps> = props => {
+const ScreenshotModal: Component<ScreenshotModalProps> = (props) => {
   return (
     <Modal
       title={i18n('screenshot', props.locale)}
@@ -40,11 +40,12 @@ const ScreenshotModal: Component<ScreenshotModalProps> = props => {
             document.body.appendChild(a)
             a.click()
             a.remove()
-          }
-        }
+          },
+        },
       ]}
-      onClose={props.onClose}>
-      <img style="width:500px;margin-top: 20px" src={props.url}/>
+      onClose={props.onClose}
+    >
+      <img style="width:500px;margin-top: 20px" src={props.url} />
     </Modal>
   )
 }

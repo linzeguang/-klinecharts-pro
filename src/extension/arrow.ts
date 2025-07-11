@@ -33,25 +33,33 @@ const arrow: OverlayTemplate = {
         if (coordinates[1].y > coordinates[0].y) {
           offsetAngle = Math.PI / 2
         } else {
-          offsetAngle = Math.PI / 2 * 3
+          offsetAngle = (Math.PI / 2) * 3
         }
       }
-      const rotateCoordinate1 = getRotateCoordinate({ x: coordinates[1].x - 8, y: coordinates[1].y + 4 }, coordinates[1], offsetAngle)
-      const rotateCoordinate2 = getRotateCoordinate({ x: coordinates[1].x - 8, y: coordinates[1].y - 4 }, coordinates[1], offsetAngle)
+      const rotateCoordinate1 = getRotateCoordinate(
+        { x: coordinates[1].x - 8, y: coordinates[1].y + 4 },
+        coordinates[1],
+        offsetAngle,
+      )
+      const rotateCoordinate2 = getRotateCoordinate(
+        { x: coordinates[1].x - 8, y: coordinates[1].y - 4 },
+        coordinates[1],
+        offsetAngle,
+      )
       return [
         {
           type: 'line',
-          attrs: { coordinates }
+          attrs: { coordinates },
         },
         {
           type: 'line',
           ignoreEvent: true,
-          attrs: { coordinates: [rotateCoordinate1, coordinates[1], rotateCoordinate2] }
-        }
+          attrs: { coordinates: [rotateCoordinate1, coordinates[1], rotateCoordinate2] },
+        },
       ]
     }
     return []
-  }
+  },
 }
 
 export default arrow

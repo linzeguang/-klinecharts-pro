@@ -22,7 +22,12 @@ import IndicatorSettingModal from './indicator-setting-modal'
 import SymbolSearchModal from './symbol-search-modal'
 
 export {
-  PeriodBar, DrawingBar, IndicatorModal,
-  TimezoneModal, SettingModal, ScreenshotModal,
-  IndicatorSettingModal, SymbolSearchModal
+  PeriodBar,
+  DrawingBar,
+  IndicatorModal,
+  TimezoneModal,
+  SettingModal,
+  ScreenshotModal,
+  IndicatorSettingModal,
+  SymbolSearchModal,
 }

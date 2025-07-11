@@ -21,8 +21,6 @@ import Input from './input'
 import Loading from './loading'
 import Switch from './switch'
 
-export {
-  Button, Checkbox, List, Modal, Select, Input, Loading, Switch
-}
+export { Button, Checkbox, List, Modal, Select, Input, Loading, Switch }
 
 export type { SelectDataSourceItem }
