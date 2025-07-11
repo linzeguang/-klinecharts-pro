@@ -622,26 +622,29 @@ const ChartProComponent: Component<ChartProComponentProps> = (props) => {
         <Show when={loadingVisible()}>
           <Loading />
         </Show>
-        <Show when={drawingBarVisible()}>
-          <DrawingBar
-            locale={props.locale}
-            onDrawingItemClick={(overlay) => {
-              widget?.createOverlay(overlay)
-            }}
-            onModeChange={(mode) => {
-              widget?.overrideOverlay({ mode: mode as OverlayMode })
-            }}
-            onLockChange={(lock) => {
-              widget?.overrideOverlay({ lock })
-            }}
-            onVisibleChange={(visible) => {
-              widget?.overrideOverlay({ visible })
-            }}
-            onRemoveClick={(groupId) => {
-              widget?.removeOverlay({ groupId })
-            }}
-          />
-        </Show>
+        {!drawingBarHidden() && (
+          <Show when={drawingBarVisible()}>
+            <DrawingBar
+              locale={props.locale}
+              onDrawingItemClick={(overlay) => {
+                widget?.createOverlay(overlay)
+              }}
+              onModeChange={(mode) => {
+                widget?.overrideOverlay({ mode: mode as OverlayMode })
+              }}
+              onLockChange={(lock) => {
+                widget?.overrideOverlay({ lock })
+              }}
+              onVisibleChange={(visible) => {
+                widget?.overrideOverlay({ visible })
+              }}
+              onRemoveClick={(groupId) => {
+                widget?.removeOverlay({ groupId })
+              }}
+            />
+          </Show>
+        )}
+
         <div ref={widgetRef} class="klinecharts-pro-widget" data-drawing-bar-visible={drawingBarVisible()} />
       </div>
     </>

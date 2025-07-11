@@ -59,6 +59,15 @@ export interface ChartProOptions {
 
   // custom
   drawingBarHidden?: boolean
+  toolBar?: {
+    symbol?: boolean
+    periods?: boolean
+    indicator?: boolean
+    timezone?: boolean
+    setting?: boolean
+    screenshot?: boolean
+    fullscreen?: boolean
+  }
 }
 
 export interface ChartPro {

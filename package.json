@@ -36,7 +36,15 @@
     "docs:preview": "vitepress preview docs",
     "docs:deploy": "npm run docs:build && gh-pages -d website",
     "lint:fix": "eslint . --fix",
-    "format:fix": "prettier --write \"./src/**/*.{ts,tsx,css}\" --cache"
+    "format:fix": "prettier --write \"./src/**/*.{ts,tsx,css}\" --cache",
+    "postversion": "git push && git push --tags --no-verify",
+    "version-tag:major": "npm version major -m \"build: UPGRADE to v%s\"",
+    "version-tag:minor": "npm version minor -m \"build: UPGRADE to v%s\"",
+    "version-tag:patch": "npm version patch -m \"build: UPGRADE to v%s\"",
+    "version-tag:premajor": "npm version premajor -m \"build: UPGRADE to v%s\"",
+    "version-tag:preminor": "npm version preminor -m \"build: UPGRADE to v%s\"",
+    "version-tag:prepatch": "npm version prepatch -m \"build: UPGRADE to v%s\"",
+    "version-tag:prerelease": "npm version prerelease -m \"build: UPGRADE to v%s\""
   },
   "devDependencies": {
     "@solidjs/testing-library": "^0.6.0",
