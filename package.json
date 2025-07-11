@@ -40,7 +40,7 @@
     "postversion": "git push && git push --tags --no-verify",
     "version-tag:major": "npm version major -m \"build: UPGRADE to v%s\"",
     "version-tag:minor": "npm version minor -m \"build: UPGRADE to v%s\"",
-    "version-tag:patch": "npm version patch -m \"build: UPGRADE to v%s\" && npm publish --access public",
+    "version-tag:patch": "npm version patch -m \"build: UPGRADE to v%s\" && npm run build && npm publish --access public",
     "version-tag:premajor": "npm version premajor -m \"build: UPGRADE to v%s\"",
     "version-tag:preminor": "npm version preminor -m \"build: UPGRADE to v%s\"",
     "version-tag:prepatch": "npm version prepatch -m \"build: UPGRADE to v%s\"",
