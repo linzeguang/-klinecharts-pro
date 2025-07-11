@@ -121,18 +121,20 @@ const PeriodBar: Component<PeriodBarProps> = (props) => {
           if (!fullScreen()) {
             const el = ref?.parentElement
             if (el) {
-              // @ts-expect-error
               const enterFullScreen =
+                // @ts-expect-error
                 el.requestFullscreen ?? el.webkitRequestFullscreen ?? el.mozRequestFullScreen ?? el.msRequestFullscreen
               enterFullScreen.call(el)
               // setFullScreen(true)
             }
           } else {
-            // @ts-expect-error
             const exitFullscreen =
               document.exitFullscreen ??
+              // @ts-expect-error
               document.msExitFullscreen ??
+              // @ts-expect-error
               document.mozCancelFullScreen ??
+              // @ts-expect-error
               document.webkitExitFullscreen
             exitFullscreen.call(document)
             // setFullScreen(false)
