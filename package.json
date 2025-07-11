@@ -1,5 +1,5 @@
 {
-  "name": "@zemo/klinecharts-pro",
+  "name": "@yennis/klinecharts-pro",
   "version": "0.0.1",
   "description": "Financial chart built out of the box based on KLineChart.",
   "type": "module",
